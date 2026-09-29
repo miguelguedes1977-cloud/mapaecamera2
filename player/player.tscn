@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cv1go2gpv8y8r"]
+
+[ext_resource type="Texture2D" uid="uid://dvnumeasiie3u" path="res://kenney_tiny-battle/Tilemap/tilemap_packed.png" id="1_oul6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(256, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(256, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("1_oul6g")
+region = Rect2(272, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxwkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbax")
+}],
+"loop": 1,
+"name": &"idle ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_g1dw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpaw0"]
+size = Vector2(16, 14)
+
+[node name="player" type="CharacterBody2D" unique_id=1147696249]
+position = Vector2(143, 75)
+
+[node name="animacao" type="AnimatedSprite2D" parent="." unique_id=1458508743]
+position = Vector2(-143, -75)
+sprite_frames = SubResource("SpriteFrames_mxwkg")
+animation = &"walk"
+frame = 1
+frame_progress = 0.029282225
+
+[node name="corpo" type="CollisionShape2D" parent="." unique_id=267154064]
+position = Vector2(-143, -75)
+shape = SubResource("RectangleShape2D_kpaw0")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1177222878]
+position = Vector2(18, 16)
