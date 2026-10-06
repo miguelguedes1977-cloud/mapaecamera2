@@ -19,8 +19,8 @@ func _physics_process(_delta: float) -> void:
 	if get_slide_collision_count() > 0:
 		get_tree().reload_current_scene()
 
-	if velocity == Vector2.ZERO: $'Animação'.play("idle")
-	else: $'Animação'.play("walk")
+	if velocity == Vector2.ZERO: $'animacao'.play("idle")
+	else: $'animacao'.play("walk")
 
-	if velocity.x < 0.0: $'Animação'.flip_h = true
-	else: $'Animação'.flip_h = false
+	if velocity.x < 0.0: $'animacao'.flip_h = true
+	else: $'animacao'.flip_h = false
